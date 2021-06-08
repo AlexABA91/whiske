@@ -1,0 +1,320 @@
+#cauntri,
+.cauntri {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 40px 20px;
+
+    & svg {
+        margin-top: 10px;
+        max-width: 60px;
+        max-height: 60px;
+    }
+    & h2 {
+        @include font(qiber, 2.55em, 400, $color2);
+        line-height: 2.5rem;
+        margin-top: 30px;
+        width: 250px;
+    }
+    .all {
+        h2 {
+            @include font(qiber, 2.1em, 400, #000);
+            margin-top: 32px;
+        }
+        p {
+            @include font(daxlinepro, 0.75em, 600, #000);
+            line-height: 1rem;
+            margin-top: 12px;
+        }
+    }
+
+    &__bottle {
+        display: block;
+        position: relative;
+        min-width: 100%;
+        min-height: 200px;
+        & img {
+            display: block;
+            position: absolute;
+            width: 460px;
+            height: 220px;
+            right: -120px;
+            top: 20px;
+            transform: rotate(20deg);
+        }
+    }
+
+    &__envelope {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 300px;
+        position: relative;
+        .bgfortext {
+            display: block;
+            margin: 0 auto;
+            background: url("../images/bagraund-for-text.png") 50% 50% /100% 100% no-repeat;
+            width: 270px;
+            height: 300px;
+            transform: scaleX(-1);
+        }
+        p {
+            display: inline;
+            position: absolute;
+            top: 60px;
+            @include font(qiber, 1.3em, 600, #000);
+            line-height: 1.3em;
+            text-align: center;
+            width: 180px;
+            transform: rotate(-13deg);
+        }
+    }
+
+    &__grin {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 240px;
+        height: 30px;
+        background-color: $color1;
+        margin-top: 32px;
+        a {
+            @include font(daxlinepro, 0.95em, 400, #fff);
+        }
+        a:after {
+            display: inline;
+            content: "\25BA";
+            font-size: 10px;
+            color: #fff;
+            margin-left: 10px;
+        }
+    }
+}
+@media (min-width: 567px) {
+    #cauntri,
+    .cauntri {
+        padding: 0 25px 40px 35px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 150px;
+        grid-template-areas:
+            "h2 h2 h2"
+            "scotland ireland usa"
+            "scotland bottle bottle"
+            "envelope japan canada"
+            "grin grin grin";
+        h2 {
+            grid-area: h2;
+            @include font(qiber, 2.1em, 400, $color2);
+            line-height: 2rem;
+            margin-top: 34px;
+            width: 200px;
+        }
+        .all {
+            width: 150px;
+            h2 {
+                font-size: 1.5em;
+                margin-top: 30px;
+            }
+            p {
+                font-size: 0.68em;
+                line-height: 0.87rem;
+                margin-top: 0px;
+            }
+        }
+
+        &__scotland {
+            grid-area: scotland;
+            margin-right: 33px;
+        }
+
+        &__ireland {
+            grid-area: ireland;
+            margin-right: 19px;
+        }
+
+        &__usa {
+            grid-area: usa;
+        }
+
+        &__bottle {
+            grid-area: bottle;
+
+            & img {
+                transform: rotate(0deg);
+                top: 100px;
+                right: -27px;
+                width: 445px;
+            }
+            @media (min-width: 670px) {
+                & img {
+                    right: -27px;
+                    width: 550px;
+                }
+            }
+        }
+
+        &__japan {
+            grid-area: japan;
+            margin-top: 30px;
+        }
+
+        &__canada {
+            grid-area: canada;
+            margin-top: 30px;
+        }
+
+        &__envelope {
+            width: 150px;
+            grid-area: envelope;
+            left: -5px;
+            margin-top: 30px;
+            .bgfortext {
+                position: absolute;
+                width: 215px;
+                height: 215px;
+            }
+            p {
+                margin-top: 15px;
+                width: 160px;
+                font-size: 1.2em;
+            }
+        }
+
+        &__grin {
+            margin-top: 45px;
+            grid-area: grin;
+            width: 290px;
+            margin: 0 auto;
+        }
+        & svg {
+            margin-top: 0;
+        }
+    }
+}
+@media (min-width: 767px) {
+    #cauntri,
+    .cauntri {
+        h2 {
+            width: 250px;
+            margin-top: 45px;
+            font-size: 2.6em;
+            line-height: 2.1rem;
+        }
+        .all {
+            width: 207px;
+            h2 {
+                font-size: 2.1em;
+                margin-top: 58px;
+            }
+            p {
+                font-size: 0.81em;
+                line-height: 1rem;
+                margin-top: 0px;
+            }
+        }
+        &__scotland {
+            margin-right: 45px;
+        }
+        &__ireland {
+            margin-right: 30px;
+        }
+        &__bottle {
+            & img {
+                top: 126px;
+                right: -27px;
+                width: 631px;
+                height: 300px;
+            }
+        }
+        &__japan {
+            grid-area: japan;
+            margin-top: 60px;
+        }
+
+        &__canada {
+            grid-area: canada;
+            margin-top: 60px;
+        }
+
+        &__envelope {
+            left: 20px;
+            top: 70px;
+
+            .bgfortext {
+                width: 275px;
+                height: 285px;
+            }
+            p {
+                margin-top: 0;
+                width: 200px;
+                font-size: 1.7em;
+                line-height: 1.7rem;
+            }
+        }
+        &__grin {
+            width: 400px;
+            height: 40px;
+            margin-top: 65px;
+            a {
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
+@media (min-width: 999px) {
+    #cauntri,
+    .cauntri {
+        & h2 {
+            width: 330px;
+            margin-top: 60px;
+            font-size: 3.7em;
+            line-height: 2.8rem;
+        }
+        & .all {
+            width: 270px;
+            h2 {
+                font-size: 2.75em;
+                margin-top: 74px;
+            }
+            p {
+                font-size: 1em;
+                line-height: 1.3rem;
+            }
+        }
+        &__scotland {
+            margin-right: 70px;
+        }
+        &__ireland {
+            margin-right: 35px;
+        }
+
+        &__bottle {
+            & img {
+                top: 194px;
+                right: -27px;
+                width: 806px;
+                height: 339px;
+            }
+        }
+
+        &__envelope {
+            left: 74px;
+            top: 118px;
+
+            .bgfortext {
+                width: 340px;
+                height: 330px;
+            }
+            p {
+                margin-top: -28px;
+                width: 250px;
+                font-size: 2em;
+                line-height: 2.1rem;
+            }
+        }
+        &__grin {
+            margin-top: 57px;
+        }
+    }
+}

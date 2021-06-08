@@ -1,0 +1,187 @@
+#twoblock {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 642px;
+    position: relative;
+    & .greu {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 50%;
+        background-color: $color2;
+        z-index: 0;
+        padding-left: 20px;
+        & h2 {
+            @include font(qiber, 4em, 400, hsl(0, 100%, 100%));
+            transform: rotate(-4deg);
+            width: 80%;
+        }
+        p {
+            @include font(daxlinepro, 0.95em, 600, hsl(0, 100%, 100%));
+            margin-top: 20px;
+            width: 62.5%;
+        }
+        @media (min-width: 450px) {
+            & h2 {
+                width: 60%;
+            }
+            p {
+                width: 50%;
+            }
+        }
+    }
+
+    & .bgim {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 50%;
+
+        & .note {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url("../images/bagraund-for-text.png") 0 0/ 100% 100% no-repeat;
+            width: 230px;
+            height: 220px;
+            position: absolute;
+            top: -45%;
+            right: calc(50% - 115px);
+            z-index: 2;
+            & p {
+                @include font(qiber, 1.37em, 600, hsl(0, 0%, 0%));
+                line-height: 22px;
+                text-align: center;
+                width: 70%;
+                transform: rotate(13deg);
+            }
+        }
+    }
+    & .bgim::after {
+        top: -1px;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+        content: "";
+        background: url("../images/img4.png") 0 0 / 100% 100% no-repeat;
+        transform: scaleY(-1);
+    }
+    @media (min-width: 0px) and (max-width: 319px) {
+        & .bgim {
+            background: url("../images/img4.png") 0 0 / 100% no-repeat;
+        }
+        & .bgim::after {
+            display: none;
+        }
+    }
+    @media (min-width: 321px) {
+        & .bgim {
+            background: url("../images/img4.png") 0 0 / 100% 100% no-repeat;
+        }
+        & .bgim::after {
+            display: none;
+        }
+    }
+}
+@media (min-width: 567px) {
+    #twoblock {
+        display: flex;
+        flex-direction: row;
+        max-height: 285px;
+        & .greu,
+        & .bgim {
+            height: 100%;
+        }
+        & .greu {
+            h2 {
+                width: 227px;
+                margin: 0 auto;
+                font-size: 3.55em;
+                margin-top: 30px;
+            }
+            p {
+                width: 227px;
+                font-size: 0.85em;
+                line-height: 17.62px;
+                margin: 0 auto;
+                margin-top: 30px;
+            }
+        }
+
+        & .bgim {
+            & .note {
+                top: 60%;
+            }
+        }
+        & .bgim::after {
+            height: 100%;
+        }
+    }
+}
+@media (min-width: 767px) {
+    #twoblock {
+        max-height: 390px;
+        & .greu {
+            padding-left: 0;
+            h2,
+            p {
+                width: 332px;
+            }
+            h2 {
+                font-size: 4.7em;
+                line-height: 65.25px;
+                margin-top: 45px;
+            }
+            p {
+                font-size: 1.15em;
+                margin-top: 44px;
+            }
+        }
+        & .bgim {
+            & .note {
+                width: 300px;
+                height: 300px;
+                top: 75%;
+                right: calc(50% - 150px);
+                p {
+                    font-size: 1.75em;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 999px) {
+    #twoblock {
+        max-height: 500px;
+
+        & .greu {
+            h2,
+            p {
+                width: 397px;
+            }
+            h2 {
+                font-size: 6.2em;
+                line-height: 85px;
+                margin-top: 52px;
+            }
+            p {
+                font-size: 1.5em;
+                margin-top: 53px;
+            }
+        }
+        & .bgim {
+            & .note {
+                width: 350px;
+                height: 350px;
+                top: 65%;
+                right: calc(50% - 175px);
+                p {
+                    font-size: 2em;
+                }
+            }
+        }
+    }
+}

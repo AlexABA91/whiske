@@ -1,0 +1,318 @@
+#list {
+    display: block;
+    position: relative;
+
+    & h2 {
+        @include font(daxlinepro, 20px, bold, #a6978a);
+        margin: 20px 20px 24px 20px;
+    }
+
+    & ol {
+        counter-reset: myCounter;
+        & li::before {
+            counter-increment: myCounter;
+            content: counter(myCounter);
+            font-size: 30px;
+            display: block;
+            width: 40px;
+            text-align: center;
+            border: 5px solid #a6978a;
+            color: #a6978a;
+            border-radius: 50%;
+            margin-bottom: 12px;
+        }
+        & .dotted::before {
+            left: -20px;
+            position: absolute;
+            font-size: 0;
+            border-radius: 0;
+            width: 8px;
+            display: inline-block;
+            margin-right: 11px;
+            vertical-align: middle;
+            margin-bottom: 0;
+        }
+        & .skip::before {
+            display: none;
+            counter-increment: none;
+        }
+        li {
+            position: relative;
+            margin: 0 20px 40px 20px;
+            @include font(myriadpro, 12px, 500, #000);
+            & p {
+                display: inline;
+                @include font(daxlinepro, 12px, 900, #000);
+                margin: 0;
+                padding: 0;
+            }
+
+            & .dotted {
+                display: block;
+                position: relative;
+
+                margin: 27px 20px 0;
+                margin-top: 27px;
+                margin-bottom: 0;
+            }
+        }
+        & li:first-child {
+            margin-top: 27px;
+            margin-bottom: 0;
+        }
+        li:nth-child(2) {
+            margin-bottom: 0;
+        }
+        li:nth-child(5) {
+            margin-bottom: 0;
+        }
+        li:nth-child(6) {
+            margin-bottom: 0;
+            z-index: 5;
+        }
+    }
+    img {
+        width: 100%;
+    }
+}
+#list::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 90%;
+    height: 4px;
+    border-bottom: 2px dotted #a6978a;
+    position: relative;
+    bottom: 19px;
+    margin: 0 auto;
+}
+@media (min-width: 567px) {
+    #list {
+        height: 735px;
+        width: 90%;
+        margin: 0 auto;
+        & h2 {
+            display: block;
+            width: 80.1%;
+            @include font(daxlinepro, 20px, bold, #a6978a);
+            margin: 0 auto;
+        }
+        ol {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: 100%;
+            & li::before {
+                position: absolute;
+                padding-top: 3px;
+                left: -40px;
+                width: 25px;
+                height: 25px;
+                font-size: 14px;
+                border-width: 2px;
+                top: -10px;
+            }
+            & li {
+                display: block;
+                width: 200px;
+                margin-left: 50px;
+                line-height: 15px;
+                @include font(daxlinepro, 12px, 600, #000);
+                & p {
+                    @include font(daxlinepro, 12px, 900, #000);
+                }
+                & .dotted {
+                    width: 170px;
+                    line-height: 15px;
+                }
+            }
+
+            & .dotted::before {
+                height: 8px;
+                background-color: #a6978a;
+                top: 3px;
+            }
+            & li:nth-child(2) {
+                img {
+                    min-width: 230px;
+                    z-index: 4;
+                }
+            }
+            & li:nth-child(3) {
+                margin-top: 27px;
+            }
+            & li:nth-child(6) {
+                left: -120px;
+                height: 269px;
+
+                img {
+                    min-width: 320px;
+                    min-height: 269px;
+                    z-index: 3;
+                }
+            }
+            & li:nth-child(3),
+            & li:nth-child(4),
+            & li:nth-child(5) {
+                margin-left: 0;
+                margin-right: 25px;
+            }
+            & li:nth-child(3),
+            & li:nth-child(4) {
+                margin-bottom: 30px;
+            }
+            & .skip {
+                margin-left: 0;
+            }
+        }
+    }
+    #list::after {
+        bottom: 40px;
+        position: absolute;
+    }
+    @media (min-width: 600px) {
+        #list {
+            margin-top: 50px;
+        }
+    }
+    @media (min-width: 670px) {
+        #list {
+            margin-top: 90px;
+        }
+    }
+}
+@media (min-width: 767px) {
+    #list {
+        margin-top: 0;
+        height: 896px;
+
+        & h2 {
+            width: 86%;
+            @include font(daxlinepro, 26px, bold, #a6978a);
+        }
+        & ol {
+            height: 100%;
+            & li::before {
+                font-size: 16px;
+                padding-top: 0px;
+            }
+            & li {
+                width: 260px;
+                line-height: 20px;
+                @include font(daxlinepro, 14px, bold, #000);
+                & p {
+                    @include font(daxlinepro, 14px, 900, #000);
+                }
+                & .dotted {
+                    margin-top: 24px;
+                    line-height: 20px;
+                    margin: 24px 0 0 0;
+                    width: 256px;
+                }
+                &.skip {
+                    left: -50px;
+                }
+            }
+            & li:nth-child(2) {
+                & img {
+                    padding: 0;
+                    width: 400px;
+                    display: block;
+                }
+            }
+            & li:nth-child(6) {
+                left: -180px;
+                height: 269px;
+
+                img {
+                    min-width: 463px;
+                    min-height: 363px;
+                    z-index: 3;
+                }
+            }
+            & li:nth-child(3),
+            & li:nth-child(4),
+            & li:nth-child(5) {
+                margin-left: 25px;
+                margin-right: 0;
+            }
+        }
+    }
+    @media (min-width: 840px) {
+        #list {
+            margin-top: 70px;
+        }
+    }
+    @media (min-width: 910px) {
+        #list {
+            margin-top: 80px;
+        }
+    }
+    #list::after {
+        bottom: 56px;
+        height: 4px;
+        border-bottom: 4px dotted #a6978a;
+    }
+}
+@media (min-width: 999px) {
+    #list {
+        margin-top: 0px;
+        height: 1161px;
+        & h2 {
+            font-size: 34px;
+            line-height: 40px;
+        }
+        & ol {
+            & li::before {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
+                height: 40px;
+                font-size: 30px;
+                border-width: 4px;
+                padding-top: 0;
+                left: -62px;
+            }
+            & li {
+                width: 335px;
+                font-size: 18px;
+                line-height: 24px;
+                & p {
+                    font-size: 18px;
+                }
+                & .dotted {
+                    margin: 44px 0 0 0;
+                    width: 335px;
+                }
+            }
+            & li:nth-child(3),
+            & li:nth-child(4) {
+                margin-bottom: 57px;
+            }
+            & li:nth-child(2) {
+                & img {
+                    padding: 44px;
+                    width: 500px;
+                    height: 500px;
+                }
+            }
+            & li:nth-child(6) {
+                left: -200px;
+                height: 269px;
+
+                img {
+                    min-width: 606px;
+                    min-height: 363px;
+                    z-index: 3;
+                }
+            }
+        }
+    }
+    #list::after {
+        position: absolute;
+        bottom: 70px;
+        height: 4px;
+        border-bottom: 4px dotted #a6978a;
+    }
+}

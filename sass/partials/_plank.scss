@@ -1,0 +1,258 @@
+.plank {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    &__geau {
+        display: block;
+        position: relative;
+        background-color: $color2;
+        min-height: 320px;
+        padding-top: 36px;
+        h1 {
+            @include font(qiber, 108.87px, 400, #fff);
+            margin: 0px 0 30px 36px;
+            transform: rotate(-2deg);
+            line-height: 80px;
+            letter-spacing: 0.32px;
+        }
+        h2 {
+            @include font(daxlinepro, 18px, bold, #fff);
+            margin-left: 30px;
+            width: 140px;
+            line-height: 24px;
+            letter-spacing: 0.32px;
+        }
+    }
+    &__img1 {
+        display: none;
+    }
+    &__imgres img {
+        position: absolute;
+        width: 100%;
+        display: block;
+        top: 220px;
+        margin: 0 auto;
+    }
+    @media (min-width: 380px) {
+        &__imgres img {
+            top: 120px;
+        }
+    }
+    @media (min-width: 440px) {
+        &__imgres img {
+            display: none;
+        }
+        &__img1 {
+            display: block;
+            img {
+                display: block;
+                width: 100%;
+                position: absolute;
+                top: 150px;
+            }
+        }
+    }
+
+    &__twoelements {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        min-height: 320px;
+        padding-top: 100px;
+        padding-top: 150px;
+        z-index: 2;
+
+        h2 {
+            display: inline-block;
+            @include font(qiber, 22px, 600, #000);
+            width: 280px;
+            text-align: center;
+            letter-spacing: 0.32px;
+            line-height: 22px;
+            margin: 18px 0;
+            z-index: 10;
+        }
+
+        & .befor,
+        & .after {
+            display: block;
+            width: 4px;
+            height: 4px;
+            background-color: #000;
+            border-radius: 2px;
+            margin: 0 auto;
+        }
+        & .befor::before,
+        .befor::after,
+        .after::after,
+        .after::before {
+            content: "";
+            display: block;
+            position: relative;
+            width: 64px;
+            height: 2px;
+            background-color: #000;
+            margin-left: 4px;
+        }
+        & .after::before,
+        & .befor::before {
+            right: 72px;
+            top: calc(50% - 1px);
+        }
+        & .befor::after,
+        & .after::after {
+            left: 4px;
+            bottom: calc(50% - 1px);
+        }
+    }
+    @media (min-width: 440px) {
+        &__twoelements {
+            justify-content: center;
+        }
+    }
+}
+@media (min-width: 568px) {
+    #plank {
+        display: flex;
+        flex-direction: row;
+        min-height: 440px;
+        overflow: hidden;
+        .plank {
+            position: relative;
+            width: 100%;
+            height: 284px;
+            overflow: hidden;
+
+            &__geau {
+                width: 50%;
+                height: 286px;
+                overflow: hidden;
+                h1 {
+                    @include font(qiber, 96.42px, 400, #fff);
+                    line-height: 70.86px;
+                    width: 160px;
+                    margin-top: 36px;
+                }
+                h2 {
+                    width: 110px;
+                }
+                @media (min-width: 600px) {
+                    h1 {
+                        font-size: 110px;
+                        margin-bottom: 40px;
+                    }
+                }
+                @media (min-width: 650px) {
+                    h1 {
+                        font-size: 120px;
+                        line-height: 85.55px;
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+            &__img1 {
+                position: absolute;
+                width: 100%;
+                top: 144px;
+                display: flex;
+                justify-content: center;
+
+                img {
+                    display: block;
+                    position: absolute;
+                    max-width: 74.68%;
+                    top: 0;
+                    left: 16.64%;
+                }
+            }
+            &__twoelements {
+                justify-content: flex-start;
+                margin-top: 15px;
+                padding-top: 0;
+                h2 {
+                    width: 170px;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 768px) {
+    #plank {
+        min-height: 570px;
+        overflow: visible;
+        .plank {
+            overflow: hidden;
+            &__geau {
+                min-height: 348px;
+                h1 {
+                    @include font(qiber, 130.23px, 400, #fff);
+                    line-height: 95.7px;
+                    width: 220px;
+                    margin-bottom: 30px;
+                }
+                @media (min-width: 850px) {
+                    h1 {
+                        margin-left: 75px;
+                    }
+                }
+                h2 {
+                    font-size: 18.42px;
+                }
+                @media (min-width: 850px) {
+                    h2 {
+                        margin-left: 75px;
+                    }
+                }
+            }
+            &__img1 {
+                top: 150px;
+            }
+            &__twoelements {
+                margin-top: 22px;
+                h2 {
+                    width: 233px;
+                    margin: 15px 0;
+                    font-size: 28px;
+                    line-height: 28px;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 999px) {
+    #plank {
+        height: 780px;
+        overflow: visible;
+        .plank {
+            &__geau {
+                min-height: 500px;
+                h1 {
+                    @include font(qiber, 169.65px, 400, #fff);
+                    line-height: 124.67px;
+                    width: 300px;
+                    margin-bottom: 47px;
+                }
+                h2 {
+                    font-size: 24px;
+                    line-height: 31px;
+                    width: 200px;
+                }
+            }
+
+            &__img1 {
+                top: 250px;
+            }
+            &__twoelements {
+                margin-top: 72px;
+                h2 {
+                    width: 371px;
+                    margin: 32px 0;
+                    font-size: 32px;
+                    line-height: 34px;
+                }
+            }
+        }
+    }
+}
